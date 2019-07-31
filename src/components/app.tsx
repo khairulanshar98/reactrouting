@@ -47,19 +47,19 @@ const LineItem: React.FC<MainProps> = (props): any => {
 
 export const App: React.FC<AppProps> = (props) => {
     return (
-        <div className="container">
-            <h1 className="title">Simple Task List with {props.compiler}, {props.framework} and {props.routing}! <a className="btn btn-primary" target="_blank" href="https://github.com/khairulanshar98/reactrouting">source</a></h1>
-            <TodoListProvider>
-                <Router>
-                    <div>
+        <TodoListProvider>
+            <Router>
+                <div className="container">
+                    <h1 className="title">Simple Task List with {props.compiler}, {props.framework} and {props.routing}! <a className="btn btn-primary" target="_blank" href="https://github.com/khairulanshar98/reactrouting">source</a></h1>
+                    <Switch>
                         <Route exact path="/" render={(route) => (
                             <Main route={route} />
                         )} />
                         <Route exact path="/add" render={(route) => <div className="col-md-4 col-md-offset-4"><TodoAdd route={route} /></div>} />
                         <Route exact path="/select/:id" render={(route) => <div className="col-md-8 col-md-offset-2"><LineItem route={route} /></div>} />
-                    </div>
-                </Router>
-            </TodoListProvider>
-        </div>
+                    </Switch>
+                </div>
+            </Router>
+        </TodoListProvider>
     )
 }
