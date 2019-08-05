@@ -13,6 +13,7 @@ module.exports = {
         path: path.join(__dirname, '/docs'),
         filename: 'js/bundle.min.js',
         chunkFilename: 'js/vendor.bundle.js',
+        publicPath: '/'
     },
     optimization: {
         splitChunks: {
@@ -68,7 +69,8 @@ module.exports = {
             // both options are optional
             path: path.resolve(__dirname, '/docs'),
             filename: "css/index.css",
-            chunkFilename: "css/vendor.css"
+            chunkFilename: "css/vendor.css",
+            publicPath: '/'
         }),
         new webpack.HotModuleReplacementPlugin(),
         new HtmlWebpackPlugin({
